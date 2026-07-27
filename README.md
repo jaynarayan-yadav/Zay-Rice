@@ -43,9 +43,17 @@ Ensure you have these installed on your live system for the best experience:
 5. **Extras**: `wallust`, `swww`, `hyprlock`, `hypridle`, `cliphist`, `playerctl`
 
 ## 🛠️ Installation & Setup
-Looking to replicate this setup? I've moved the complete step-by-step installation guide, from creating a bootable USB to applying these dotfiles, to a separate file.
 
-👉 **[Read the Setup Guide](howtosetup.txt)**
+### Quick Install
+If you already have Arch Linux running and the required packages installed, just clone and run the deployment script:
+```bash
+git clone https://github.com/jaynarayan-yadav/ZAY-RIce.git ~/ZAY-RIce
+~/ZAY-RIce/deploy.sh
+```
+
+### Full Setup Guide
+Looking to replicate this setup from scratch (including OS installation)? I've moved the complete step-by-step installation guide to a separate file.
+👉 **[Read the Full Setup Guide](howtosetup.txt)**
 
 ---
 *Created by [jaynarayan-yadav](https://github.com/jaynarayan-yadav)*
