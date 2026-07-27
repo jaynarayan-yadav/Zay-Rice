@@ -112,6 +112,25 @@ For a complete Arch Linux installation from scratch (bootable USB → SDDM):
 
 ---
 
+## 🗺️ Roadmap
+
+Planned features for upcoming versions:
+
+| Version | Feature |
+|---------|---------|
+| **v1.1** | 🎮 OMEN key overlay panel — fan speed, performance mode, system stats |
+| **v1.1** | 🌡️ Live CPU temp + fan RPM in Waybar via `nbfc-linux` |
+| **v1.2** | 🎨 Full Wallust template pipeline — entire desktop recolors from wallpaper |
+| **v1.2** | 🎨 Theme presets: Catppuccin, Gruvbox, Nord |
+| **v1.3** | 🔔 Custom SwayNC stylesheet + quick settings panel |
+| **v1.4** | 🖼️ Picture-in-Picture auto-rules, named workspaces with icons |
+| **v1.5** | 🚀 Interactive TUI setup script + first-boot welcome screen |
+| **Future** | 🎮 Gamemode toggle, AGS bar, AI wallpaper generator |
+
+👉 **[Full Roadmap →](ROADMAP.md)**
+
+---
+
 ## 📜 License
 MIT — see [LICENSE](LICENSE)
 
