@@ -1,0 +1,21 @@
+# Editor artifacts
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Wallust runtime output (auto-generated, do not commit)
+dot_config/wallust/colors.sh
+dot_config/appearance/wallpaper_active
+
+# Backup dirs created by deploy.sh
+backup_rice_*/

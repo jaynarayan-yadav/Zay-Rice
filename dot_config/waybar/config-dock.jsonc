@@ -7,12 +7,22 @@
     "margin-bottom": 15,
     "margin-left": 10,
 
+    "modules-top": [
+        "custom/appmenu"
+    ],
     "modules-center": [
         "wlr/taskbar"
     ],
     "modules-bottom": [
         "custom/settings"
     ],
+
+    "custom/appmenu": {
+        "format": "󰣇",
+        "on-click": "wofi --show drun",
+        "tooltip": true,
+        "tooltip-format": "Launch App"
+    },
 
     "wlr/taskbar": {
         "format": "{icon}",
@@ -26,9 +36,9 @@
     },
 
     "custom/settings": {
-        "format": " ⚙ ",
-        "on-click": "pavucontrol || nm-connection-editor",
+        "format": "⚙",
+        "on-click": "pavucontrol",
         "tooltip": true,
-        "tooltip-format": "Control Center / Quick Settings"
+        "tooltip-format": "Audio Settings"
     }
 }

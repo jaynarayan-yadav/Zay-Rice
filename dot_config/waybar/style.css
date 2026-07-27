@@ -1,9 +1,7 @@
 /* ==============================================================================
- * WAYBAR & VERTICAL DOCK TOKYO NIGHT SYNTH STYLESHEET
- * Lead Desktop Architect & Visual Specialist
- * Features:
- *   - Top Bar: Glassmorphism header with system monitors, media player & workspace pills
- *   - Side Dock: Squircle app launcher buttons (#241b35) with neon pink (#f70068) active dots
+ * WAYBAR — Tokyo Night Synth Stylesheet
+ * Top Bar: Glassmorphism header with system monitors, media & workspace pills
+ * Side Dock: Squircle app buttons (#241b35) with neon pink active indicator
  * ============================================================================== */
 
 * {
@@ -14,7 +12,7 @@
     min-height: 0;
 }
 
-/* --- TOP BAR STYLING --- */
+/* --- TOP BAR --- */
 window#waybar {
     background-color: rgba(26, 22, 37, 0.80);
     border: 1px solid rgba(247, 0, 104, 0.35);
@@ -95,7 +93,7 @@ window#waybar {
     font-weight: bold;
 }
 
-/* --- VERTICAL SIDE DOCK STYLING --- */
+/* --- VERTICAL SIDE DOCK --- */
 window#waybar.dock {
     background-color: rgba(26, 22, 37, 0.88);
     border: 1px solid rgba(247, 0, 104, 0.4);
@@ -104,19 +102,37 @@ window#waybar.dock {
     box-shadow: 0 4px 20px rgba(10, 8, 16, 0.6);
 }
 
+/* App Launcher Button at top of dock */
+window#waybar.dock #custom-appmenu {
+    background-color: rgba(247, 0, 104, 0.85);
+    color: #1a1625;
+    border-radius: 12px;
+    padding: 10px 0;
+    margin: 6px 4px 2px 4px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+window#waybar.dock #custom-appmenu:hover {
+    background-color: #00e5ff;
+    color: #1a1625;
+    box-shadow: 0 0 10px #00e5ff;
+}
+
 window#waybar.dock #taskbar {
     margin: 4px 0;
 }
 
-/* Squircle App Buttons in Dock (#241b35 surface color) */
+/* Squircle App Buttons */
 window#waybar.dock #taskbar button {
     padding: 10px 8px;
     margin: 6px 4px;
     border-radius: 14px;
     background-color: #241b35;
     border: 1px solid rgba(247, 0, 104, 0.15);
+    border-left: 3px solid transparent;
     transition: all 0.25s cubic-bezier(0.1, 1, 0.1, 1);
-    position: relative;
 }
 
 window#waybar.dock #taskbar button:hover {
@@ -125,7 +141,7 @@ window#waybar.dock #taskbar button:hover {
     transform: scale(1.08);
 }
 
-/* Active & Running App Indicator Dot (#f70068 Neon Pink Dot on Left Edge) */
+/* Active window — neon pink left indicator */
 window#waybar.dock #taskbar button.active {
     background-color: rgba(36, 27, 53, 0.95);
     border-left: 4px solid #f70068;
@@ -133,13 +149,17 @@ window#waybar.dock #taskbar button.active {
     box-shadow: -2px 0 10px rgba(247, 0, 104, 0.7), 0 0 12px rgba(0, 229, 255, 0.3);
 }
 
-/* Minimized Running App Indicator Dot (Electric Cyan Indicator) */
-window#waybar.dock #taskbar button.minimized,
-window#waybar.dock #taskbar button:not(.active) {
+/* Running but not focused — subtle cyan indicator */
+window#waybar.dock #taskbar button.running:not(.active) {
     border-left: 3px solid rgba(0, 229, 255, 0.6);
 }
 
-/* Bottom Quick Settings Button in Dock */
+/* Not running — no indicator dot */
+window#waybar.dock #taskbar button:not(.active):not(.running) {
+    border-left: 3px solid transparent;
+}
+
+/* Bottom Quick Settings Button */
 #custom-settings {
     background-color: #241b35;
     color: #00e5ff;

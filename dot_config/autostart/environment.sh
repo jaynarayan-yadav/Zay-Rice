@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# PURE HYPRLAND SESSION - Wayland Environment & Autostart
-# NO KDE Plasma. Clean standalone Hyprland with:
-#   - xdg-desktop-portal-hyprland + xdg-desktop-portal-gtk
-#   - polkit-kde-authentication-agent-1 (standalone, no KDE DE)
-#   - cliphist single-instance clipboard
+# PURE HYPRLAND SESSION — Wayland Environment & Autostart
+# Sets environment variables and starts required background services.
+# Services: xdg-desktop-portal-hyprland, xdg-desktop-portal-gtk,
+#           polkit-kde-authentication-agent-1, cliphist clipboard manager
+#
+# NOTE on polkit-kde-authentication-agent-1:
+#   This is a STANDALONE binary from the polkit-kde-agent package.
+#   It does NOT require KDE Plasma or kwin.
+#   Alternative agents: lxqt-policykit, mate-polkit
 # ==============================================================================
 
 # --- Session Identity ---
@@ -28,14 +32,14 @@ export _JAVA_AWT_WM_NONREPARENTING="1"
 export XCURSOR_SIZE="24"
 export HYPRCURSOR_SIZE="24"
 
-# --- D-Bus session registration (required for portals on some setups) ---
+# --- D-Bus session registration ---
 if command -v dbus-update-activation-environment >/dev/null 2>&1; then
     dbus-update-activation-environment --systemd \
         WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE 2>/dev/null || true
 fi
 
-# --- Desktop Portal Initialization (Pure Hyprland — no KDE conflict) ---
-# Kill any stale portals gracefully then restart clean
+# --- Desktop Portal Initialization ---
+# Kill stale portals from a previous session then restart cleanly
 pkill -f "xdg-desktop-portal" 2>/dev/null || true
 sleep 0.5
 
@@ -47,7 +51,7 @@ elif [ -f /usr/libexec/xdg-desktop-portal-hyprland ]; then
 fi
 sleep 0.8
 
-# Start GTK portal (handles file-pickers and screenshots in pure Hyprland)
+# Start GTK portal (handles file-pickers in pure Hyprland)
 if [ -f /usr/lib/xdg-desktop-portal-gtk ]; then
     /usr/lib/xdg-desktop-portal-gtk &
 elif [ -f /usr/libexec/xdg-desktop-portal-gtk ]; then
@@ -73,6 +77,6 @@ fi
 
 # --- Clipboard Manager (single instance) ---
 if command -v cliphist >/dev/null 2>&1 && ! pgrep -f "cliphist store" >/dev/null; then
-    wl-paste --type text --watch cliphist store &
+    wl-paste --type text  --watch cliphist store &
     wl-paste --type image --watch cliphist store &
 fi
