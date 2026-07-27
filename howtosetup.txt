@@ -26,7 +26,7 @@ sudo dd status=progress bs=4M if=path/to/archlinux.iso of=/dev/sdX conv=fsync
 sudo pacman -Syu git base-devel networkmanager pipewire pipewire-pulse pipewire-alsa wireplumber sddm
 sudo systemctl enable --now NetworkManager sddm
 
-sudo pacman -S hyprland waybar kitty wofi thunar swaync hyprpaper hyprlock hypridle \
+sudo pacman -S hyprland waybar kitty wofi dolphin swaync hyprpaper hyprlock hypridle \
     qt5-wayland qt6-wayland qt5ct xdg-desktop-portal-hyprland polkit-kde-agent \
     swww cliphist wl-clipboard playerctl pavucontrol blueman nm-connection-editor \
     ttf-jetbrains-mono-nerd papirus-icon-theme

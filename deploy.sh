@@ -18,7 +18,7 @@ echo ""
 
 # Step 1: Audit Required Packages
 echo "[1/4] Auditing system dependencies..."
-REQUIRED_PKGS=("hyprland" "waybar" "wofi" "kitty" "thunar" "swaync"
+REQUIRED_PKGS=("hyprland" "waybar" "wofi" "kitty" "dolphin" "swaync"
                "xdg-desktop-portal-hyprland" "polkit-kde-agent"
                "hyprpaper" "cliphist" "wl-clipboard" "playerctl"
                "nm-connection-editor" "pavucontrol" "blueman" "qt5ct")

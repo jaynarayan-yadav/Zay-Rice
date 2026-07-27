@@ -40,7 +40,7 @@ The deploy script will check for missing packages, back up your existing configs
 
 ```bash
 # Core (pacman)
-sudo pacman -S hyprland waybar wofi kitty thunar swaync hyprpaper \
+sudo pacman -S hyprland waybar wofi kitty dolphin swaync hyprpaper \
     xdg-desktop-portal-hyprland polkit-kde-agent qt5ct \
     cliphist wl-clipboard playerctl pavucontrol blueman nm-connection-editor \
     ttf-jetbrains-mono-nerd papirus-icon-theme
