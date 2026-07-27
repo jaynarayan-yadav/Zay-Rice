@@ -1,0 +1,73 @@
+## 🚀 Arch Linux + Hyprland Setup Blueprint
+
+### SECTION 1: Creating the Bootable USB Drive
+#### On Windows
+1. Download official Arch Linux ISO from `archlinux.org/download`.
+2. Open Rufus, insert USB drive (8GB+).
+3. Set Target System to **UEFI (non-CSM)** → click **START** in DD Image Mode.
+
+#### On Linux/macOS
+```bash
+sudo dd status=progress bs=4M if=path/to/archlinux.iso of=/dev/sdX conv=fsync
+```
+
+---
+
+### SECTION 2: Installing Base Arch Linux
+1. Boot from USB (disable Secure Boot in BIOS).
+2. Connect to Wi-Fi: `iwctl` → `station wlan0 connect YOUR_SSID`
+3. Run: `archinstall` → Select: BTRFS or EXT4, Pipewire, NetworkManager, Minimal profile.
+4. Reboot: `reboot`
+
+---
+
+### SECTION 3: Core Packages
+```bash
+sudo pacman -Syu git base-devel networkmanager pipewire pipewire-pulse pipewire-alsa wireplumber sddm
+sudo systemctl enable --now NetworkManager sddm
+
+sudo pacman -S hyprland waybar kitty wofi dolphin hyprpaper hyprlock hypridle \
+    qt5-wayland qt6-wayland xdg-desktop-portal-hyprland polkit-kde-agent \
+    swww cliphist wl-clipboard playerctl pavucontrol blueman nm-connection-editor \
+    ttf-jetbrains-mono-nerd papirus-icon-theme
+
+# AUR helper
+cd ~ && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ~ && rm -rf yay
+
+# AUR packages
+yay -S visual-studio-code-bin wallust-git bibata-cursor-theme tokyonight-gtk-theme-git beautyline
+```
+
+---
+
+### SECTION 4: Deploy This Repository
+```bash
+git clone https://github.com/jaynarayan-yadav/ZAY-RIce.git ~/ZAY-RIce
+~/ZAY-RIce/deploy.sh
+```
+
+---
+
+### SECTION 5: Verification Checklist
+```bash
+# Reload Hyprland
+hyprctl reload
+
+# Verify portals (should see exactly 2 processes)
+pgrep -a xdg-desktop-portal
+
+# Verify polkit (should see exactly 1 process)
+pgrep -a polkit-kde
+
+# Test opacity (open Kitty — should be 0.75)
+# Super + Return
+
+# Test split snap
+# Open 2 windows → Super + Left / Super + Right
+
+# Test minimize
+# Super + M → click app icon in dock/taskbar to restore
+
+# Switch wallpaper + dynamic palette
+~/.config/hypr/scripts/wallpaper.sh dark-figure-purple.png
+```
