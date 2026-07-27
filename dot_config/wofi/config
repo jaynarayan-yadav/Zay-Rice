@@ -1,0 +1,19 @@
+# Wofi Launcher Configuration
+# Agent 4: GUI & User Experience Engineer
+
+mode=drun
+show=drun
+width=500
+height=400
+always_parse_args=true
+show_all=true
+print_command=true
+insensitive=true
+prompt=Search Apps...
+location=center
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+allow_images=true
+image_size=24

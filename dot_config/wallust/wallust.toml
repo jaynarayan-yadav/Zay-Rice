@@ -1,0 +1,27 @@
+# Wallust Dynamic Theme Configuration
+# Agent 2: Theme & Visual Design Specialist
+# Controls how wallust generates palettes from wallpapers
+
+[main]
+# Theme template to use for color output
+theme = "base16"
+
+# Palette variant: "dark" or "light"
+palette = "dark"
+
+# Color saturation boost (0.0 - 1.0, higher = more vibrant)
+saturation = 0.7
+
+# Contrast ratio boost to keep text readable
+contrast = 0.4
+
+# Number of colors to extract from wallpaper
+num_colors = 16
+
+[run]
+# Reload these commands after palette generation
+# reload_command = "hyprctl reload && pkill -SIGUSR2 waybar"
+
+[templates]
+# Path to custom color templates for Hyprland, Waybar, Wofi, Kitty
+# (see dot_config/appearance/wallust-templates/ for template files)

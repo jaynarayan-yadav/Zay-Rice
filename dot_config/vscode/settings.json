@@ -1,0 +1,25 @@
+{
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Fira Code', monospace",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "window.titleBarStyle": "custom",
+    "window.dialogStyle": "custom",
+    "workbench.layoutControl.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "selection",
+    "workbench.colorCustomizations": {
+        "editor.background": "#1a1625",
+        "sideBar.background": "#241b35",
+        "activityBar.background": "#1a1625",
+        "statusBar.background": "#241b35",
+        "statusBar.foreground": "#e0def4",
+        "titleBar.activeBackground": "#1a1625",
+        "titleBar.activeForeground": "#e0def4",
+        "editorCursor.foreground": "#00e5ff",
+        "selection.background": "#f7006880"
+    }
+}

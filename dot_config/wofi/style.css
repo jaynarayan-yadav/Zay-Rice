@@ -1,0 +1,59 @@
+/* Wofi Tokyo Night Synth CSS Styling */
+window {
+    margin: 0px;
+    background-color: rgba(26, 22, 37, 0.92);
+    border: 2px solid #f70068;
+    border-radius: 12px;
+    font-family: "JetBrainsMono Nerd Font", Roboto, sans-serif;
+    font-size: 14px;
+}
+
+#input {
+    margin: 12px;
+    border: 1px solid #00e5ff;
+    border-radius: 8px;
+    color: #e0def4;
+    background-color: #241b35;
+    padding: 8px 12px;
+}
+
+#input:focus {
+    border: 2px solid #f70068;
+    box-shadow: 0 0 8px #f70068;
+}
+
+#inner-box {
+    margin: 6px 12px 12px 12px;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0px;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    color: #e0def4;
+}
+
+#entry {
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#entry:selected {
+    background-color: #f70068;
+    color: #1a1625;
+    font-weight: bold;
+}
+
+#entry:selected #text {
+    color: #1a1625;
+}
